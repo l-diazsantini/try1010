@@ -146,16 +146,6 @@ class _MultimeterCopyCopyCopyWidgetState
                     ],
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.26, -0.23),
-                  child: Text(
-                    'Ω',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Montserrat',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
               ],
             ),
           ),

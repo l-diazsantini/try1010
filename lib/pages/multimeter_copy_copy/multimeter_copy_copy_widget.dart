@@ -145,16 +145,6 @@ class _MultimeterCopyCopyWidgetState extends State<MultimeterCopyCopyWidget> {
                     ],
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(0.23, -0.23),
-                  child: Text(
-                    'A',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Montserrat',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
               ],
             ),
           ),
