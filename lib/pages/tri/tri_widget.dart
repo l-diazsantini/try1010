@@ -139,7 +139,7 @@ class _TriWidgetState extends State<TriWidget> {
                         id: widget!.deviceId,
                         rssi: _model.currentRssi,
                       ),
-                      'Tri1',
+                      'Lab 7 tri',
                     );
                   },
                   child: Material(
@@ -171,7 +171,7 @@ class _TriWidgetState extends State<TriWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Frequency = \nAmplitude = ',
+                                      'Frequency = 30Hz\nAmplitude = 0.5V',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -191,72 +191,8 @@ class _TriWidgetState extends State<TriWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    await actions.sendData(
-                      BTDeviceStruct(
-                        name: widget!.deviceName,
-                        id: widget!.deviceId,
-                        rssi: _model.currentRssi,
-                      ),
-                      'Tri2',
-                    );
-                  },
-                  child: Material(
-                    color: Colors.transparent,
-                    elevation: 2.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: Container(
-                      width: double.infinity,
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent2,
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 16.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Frequency = \nAmplitude = ',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 12.0),
+                padding:
+                    EdgeInsetsDirectional.fromSTEB(24.0, 277.0, 24.0, 12.0),
                 child: Text(
                   'Stop the wave generation:',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -267,8 +203,7 @@ class _TriWidgetState extends State<TriWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await actions.sendData(

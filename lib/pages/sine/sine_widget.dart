@@ -140,7 +140,7 @@ class _SineWidgetState extends State<SineWidget> {
                         id: widget!.deviceId,
                         rssi: _model.currentRssi,
                       ),
-                      'Sine1',
+                      'Lab 5 sine',
                     );
                   },
                   child: Material(
@@ -172,7 +172,7 @@ class _SineWidgetState extends State<SineWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Frequency = \nAmplitude = ',
+                                      'Frequency = 30Hz\nAmplitude = 2V\nPhase Shift = 50°',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -205,7 +205,7 @@ class _SineWidgetState extends State<SineWidget> {
                         id: widget!.deviceId,
                         rssi: _model.currentRssi,
                       ),
-                      'Sine2',
+                      'Lab 6 sine',
                     );
                   },
                   child: Material(
@@ -237,7 +237,7 @@ class _SineWidgetState extends State<SineWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Frequency = \nAmplitude = ',
+                                      'Frequency = 1Hz\nAmplitude = 2V\nPhase Shift = 0°',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -257,7 +257,72 @@ class _SineWidgetState extends State<SineWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.sendData(
+                      BTDeviceStruct(
+                        name: widget!.deviceName,
+                        id: widget!.deviceId,
+                        rssi: _model.currentRssi,
+                      ),
+                      'Lab 7 sine',
+                    );
+                  },
+                  child: Material(
+                    color: Colors.transparent,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent2,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 16.0, 16.0, 16.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Frequency = 30Hz\nAmplitude = 0.5V\nPhase Shift = 0°',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 13.0, 24.0, 12.0),
                 child: Text(
                   'Stop the wave generation:',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -268,8 +333,7 @@ class _SineWidgetState extends State<SineWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await actions.sendData(

@@ -139,7 +139,7 @@ class _SquareWidgetState extends State<SquareWidget> {
                         id: widget!.deviceId,
                         rssi: _model.currentRssi,
                       ),
-                      'Square1',
+                      'Lab 4 square',
                     );
                   },
                   child: Material(
@@ -150,7 +150,7 @@ class _SquareWidgetState extends State<SquareWidget> {
                     ),
                     child: Container(
                       width: double.infinity,
-                      height: 100.0,
+                      height: 133.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).accent2,
                         borderRadius: BorderRadius.circular(12.0),
@@ -171,11 +171,12 @@ class _SquareWidgetState extends State<SquareWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Frequency = \nAmplitude = ',
+                                      'Frequency = 20Hz \nAmplitude = 1V\nDuty Cycle = 50%\nOffset = 1V',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            fontSize: 22.0,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -204,7 +205,7 @@ class _SquareWidgetState extends State<SquareWidget> {
                         id: widget!.deviceId,
                         rssi: _model.currentRssi,
                       ),
-                      'Square2',
+                      'Lab 7 square',
                     );
                   },
                   child: Material(
@@ -215,7 +216,7 @@ class _SquareWidgetState extends State<SquareWidget> {
                     ),
                     child: Container(
                       width: double.infinity,
-                      height: 100.0,
+                      height: 133.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).accent2,
                         borderRadius: BorderRadius.circular(12.0),
@@ -236,11 +237,12 @@ class _SquareWidgetState extends State<SquareWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Frequency = \nAmplitude = ',
+                                      'Frequency = 30Hz\nAmplitude = 0.5V\nDuty Cycle = 0%\nOffset = 0V',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            fontSize: 22.0,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -256,7 +258,7 @@ class _SquareWidgetState extends State<SquareWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 79.0, 24.0, 12.0),
                 child: Text(
                   'Stop the wave generation:',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -267,8 +269,7 @@ class _SquareWidgetState extends State<SquareWidget> {
               ),
               Expanded(
                 child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await actions.sendData(
