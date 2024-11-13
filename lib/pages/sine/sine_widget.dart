@@ -110,275 +110,202 @@ class _SineWidgetState extends State<SineWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                child: Text(
+                  'What frequency and amplitude would you like the wave to have?',
+                  textAlign: TextAlign.start,
+                  style: FlutterFlowTheme.of(context).headlineLarge.override(
+                        fontFamily: 'Montserrat',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.sendData(
+                      BTDeviceStruct(
+                        name: widget!.deviceName,
+                        id: widget!.deviceId,
+                        rssi: _model.currentRssi,
+                      ),
+                      'Lab 5 sine',
+                    );
+                  },
+                  child: Material(
+                    color: Colors.transparent,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 75.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent2,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Frequency = 30Hz\nAmplitude = 2V\nPhase Shift = 50°',
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 17.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.sendData(
+                      BTDeviceStruct(
+                        name: widget!.deviceName,
+                        id: widget!.deviceId,
+                        rssi: _model.currentRssi,
+                      ),
+                      'Lab 6 sine',
+                    );
+                  },
+                  child: Material(
+                    color: Colors.transparent,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 75.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent2,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Frequency = 1Hz\nAmplitude = 2V\nPhase Shift = 0°',
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 17.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await actions.sendData(
+                      BTDeviceStruct(
+                        name: widget!.deviceName,
+                        id: widget!.deviceId,
+                        rssi: _model.currentRssi,
+                      ),
+                      'Lab 7 sine',
+                    );
+                  },
+                  child: Material(
+                    color: Colors.transparent,
+                    elevation: 2.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      height: 75.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).accent2,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Text(
+                          'Frequency = 30Hz\nAmplitude = 0.5V\nPhase Shift = 0°',
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Montserrat',
+                                    fontSize: 17.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 22.0, 24.0, 12.0),
+                child: Text(
+                  'Stop the wave generation:',
+                  style: FlutterFlowTheme.of(context).titleLarge.override(
+                        fontFamily: 'Montserrat',
+                        letterSpacing: 0.0,
+                      ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                  child: Text(
-                    'What frequency and amplitude would you like the wave to have?',
-                    textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).headlineLarge.override(
-                          fontFamily: 'Montserrat',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
+                  child: FFButtonWidget(
+                    onPressed: () async {
                       await actions.sendData(
-                        BTDeviceStruct(
-                          name: widget!.deviceName,
-                          id: widget!.deviceId,
-                          rssi: _model.currentRssi,
-                        ),
-                        'Lab 5 sine',
+                        BTDeviceStruct(),
+                        'Off',
                       );
                     },
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 2.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent2,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Frequency = 30Hz\nAmplitude = 2V\nPhase Shift = 50°',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 17.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                    text: 'Stop',
+                    options: FFButtonOptions(
+                      width: 300.0,
+                      height: 200.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).error,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleLarge.override(
+                                fontFamily: 'Montserrat',
+                                color: FlutterFlowTheme.of(context).primary,
+                                letterSpacing: 0.0,
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      elevation: 0.0,
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await actions.sendData(
-                        BTDeviceStruct(
-                          name: widget!.deviceName,
-                          id: widget!.deviceId,
-                          rssi: _model.currentRssi,
-                        ),
-                        'Lab 6 sine',
-                      );
-                    },
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 2.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent2,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Frequency = 1Hz\nAmplitude = 2V\nPhase Shift = 0°',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 17.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await actions.sendData(
-                        BTDeviceStruct(
-                          name: widget!.deviceName,
-                          id: widget!.deviceId,
-                          rssi: _model.currentRssi,
-                        ),
-                        'Lab 7 sine',
-                      );
-                    },
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 2.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Container(
-                        width: double.infinity,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent2,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Frequency = 30Hz\nAmplitude = 0.5V\nPhase Shift = 0°',
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 17.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 13.0, 24.0, 12.0),
-                  child: Text(
-                    'Stop the wave generation:',
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Montserrat',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        await actions.sendData(
-                          BTDeviceStruct(),
-                          'Off',
-                        );
-                      },
-                      text: 'Stop',
-                      options: FFButtonOptions(
-                        width: 300.0,
-                        height: 200.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).error,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleLarge.override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  letterSpacing: 0.0,
-                                ),
-                        elevation: 0.0,
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
