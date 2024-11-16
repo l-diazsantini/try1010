@@ -280,7 +280,11 @@ class _SineWidgetState extends State<SineWidget> {
                   child: FFButtonWidget(
                     onPressed: () async {
                       await actions.sendData(
-                        BTDeviceStruct(),
+                        BTDeviceStruct(
+                          name: widget!.deviceName,
+                          id: widget!.deviceId,
+                          rssi: widget!.deviceRssi,
+                        ),
                         'Off',
                       );
                     },
