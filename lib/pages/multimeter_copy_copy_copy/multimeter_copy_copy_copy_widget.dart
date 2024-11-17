@@ -103,6 +103,8 @@ class _MultimeterCopyCopyCopyWidgetState
                 ),
                 'Stop',
               );
+              FFAppState().Loopy = false;
+              safeSetState(() {});
             },
           ),
           title: Text(

@@ -26,9 +26,6 @@ class FFAppState extends ChangeNotifier {
       _yaxis =
           prefs.getStringList('ff_yaxis')?.map(double.parse).toList() ?? _yaxis;
     });
-    _safeInit(() {
-      _Loopy = prefs.getBool('ff_Loopy') ?? _Loopy;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -112,7 +109,6 @@ class FFAppState extends ChangeNotifier {
   bool get Loopy => _Loopy;
   set Loopy(bool value) {
     _Loopy = value;
-    prefs.setBool('ff_Loopy', value);
   }
 }
 
