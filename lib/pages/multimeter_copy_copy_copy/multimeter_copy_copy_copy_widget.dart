@@ -95,6 +95,14 @@ class _MultimeterCopyCopyCopyWidgetState
             ),
             onPressed: () async {
               context.pop();
+              await actions.sendData(
+                BTDeviceStruct(
+                  name: widget!.deviceName,
+                  id: widget!.deviceId,
+                  rssi: widget!.deviceRssi,
+                ),
+                'Stop',
+              );
             },
           ),
           title: Text(
