@@ -40,21 +40,17 @@ class _DisplayReceivedDataWidgetState extends State<DisplayReceivedDataWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      while (FFAppState().Loopy == true) {
-        _model.receivedDataTimer = InstantTimer.periodic(
-          duration: Duration(milliseconds: 1000),
-          callback: (timer) async {
-            _model.receivedData = await actions.receiveData(
-              widget!.device!,
-            );
-            _model.data = _model.receivedData;
-            safeSetState(() {});
-            _model.receivedDataTimer?.cancel();
-            await Future.delayed(const Duration(milliseconds: 5000));
-          },
-          startImmediately: true,
-        );
-      }
+      _model.receivedDataTimer = InstantTimer.periodic(
+        duration: Duration(milliseconds: 1000),
+        callback: (timer) async {
+          _model.receivedData = await actions.receiveData(
+            widget!.device!,
+          );
+          _model.data = _model.receivedData;
+          safeSetState(() {});
+        },
+        startImmediately: true,
+      );
     });
   }
 
@@ -67,8 +63,6 @@ class _DisplayReceivedDataWidgetState extends State<DisplayReceivedDataWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

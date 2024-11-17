@@ -101,8 +101,6 @@ class _MultimeterCopyWidgetState extends State<MultimeterCopyWidget> {
                 ),
                 'Stop',
               );
-              FFAppState().Loopy = false;
-              safeSetState(() {});
             },
           ),
           title: Text(

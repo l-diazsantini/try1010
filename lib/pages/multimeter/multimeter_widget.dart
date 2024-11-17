@@ -143,8 +143,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         ),
                         'Voltmeter',
                       );
-                      FFAppState().Loopy = true;
-                      safeSetState(() {});
 
                       context.pushNamed(
                         'MultimeterCopy',
@@ -262,8 +260,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         ),
                         'Ammeter',
                       );
-                      FFAppState().Loopy = true;
-                      safeSetState(() {});
 
                       context.pushNamed(
                         'MultimeterCopyCopy',
@@ -381,8 +377,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         ),
                         'Ohmmeter',
                       );
-                      FFAppState().Loopy = true;
-                      safeSetState(() {});
 
                       context.pushNamed(
                         'MultimeterCopyCopyCopy',

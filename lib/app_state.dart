@@ -104,12 +104,6 @@ class FFAppState extends ChangeNotifier {
     yaxis.insert(index, value);
     prefs.setStringList('ff_yaxis', _yaxis.map((x) => x.toString()).toList());
   }
-
-  bool _Loopy = true;
-  bool get Loopy => _Loopy;
-  set Loopy(bool value) {
-    _Loopy = value;
-  }
 }
 
 void _safeInit(Function() initializeField) {
