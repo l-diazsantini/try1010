@@ -40,7 +40,7 @@ class _DisplayReceivedDataWidgetState extends State<DisplayReceivedDataWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      while (FFAppState().Loopy) {
+      while (FFAppState().Loopy == true) {
         _model.receivedDataTimer = InstantTimer.periodic(
           duration: Duration(milliseconds: 1000),
           callback: (timer) async {
