@@ -108,7 +108,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList('ff_yaxis', _yaxis.map((x) => x.toString()).toList());
   }
 
-  bool _Loopy = false;
+  bool _Loopy = true;
   bool get Loopy => _Loopy;
   set Loopy(bool value) {
     _Loopy = value;
