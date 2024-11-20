@@ -244,10 +244,10 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                       );
                       _model.tapp = _model.tapp + 1;
                       safeSetState(() {});
-                      _model.hehe = await actions.moduloChecker(
+                      _model.hehehe = await actions.moduloChecker(
                         _model.tapp,
                       );
-                      _model.colorChang = _model.hehe!;
+                      _model.colorChang = _model.hehehe!;
                       safeSetState(() {});
 
                       safeSetState(() {});

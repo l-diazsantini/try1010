@@ -35,7 +35,7 @@ class PowerSupplyModel extends FlutterFlowModel<PowerSupplyWidget> {
   // Stores action output result for [Custom Action - moduloChecker] action in Container widget.
   bool? hehe;
   // Stores action output result for [Custom Action - moduloChecker] action in Container widget.
-  bool? hehe;
+  bool? hehehe;
 
   @override
   void initState(BuildContext context) {}
