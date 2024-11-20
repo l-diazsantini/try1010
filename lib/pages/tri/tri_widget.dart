@@ -141,6 +141,8 @@ class _TriWidgetState extends State<TriWidget> {
                       ),
                       'Lab 7 tri',
                     );
+                    _model.colorChange = true;
+                    safeSetState(() {});
                   },
                   child: Material(
                     color: Colors.transparent,
@@ -152,7 +154,12 @@ class _TriWidgetState extends State<TriWidget> {
                       width: double.infinity,
                       height: 75.0,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).accent2,
+                        color: valueOrDefault<Color>(
+                          _model.colorChange == false
+                              ? FlutterFlowTheme.of(context).accent2
+                              : FlutterFlowTheme.of(context).success,
+                          FlutterFlowTheme.of(context).accent2,
+                        ),
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Align(
