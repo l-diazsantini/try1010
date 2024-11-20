@@ -23,11 +23,19 @@ class PowerSupplyModel extends FlutterFlowModel<PowerSupplyWidget> {
 
   bool colorChang = false;
 
+  int tap = 1;
+
+  int tapp = 1;
+
   ///  State fields for stateful widgets in this page.
 
   InstantTimer? rssiUpdateTimer;
   // Stores action output result for [Custom Action - getRssi] action in PowerSupply widget.
   int? updatedRssi;
+  // Stores action output result for [Custom Action - moduloChecker] action in Container widget.
+  bool? hehe;
+  // Stores action output result for [Custom Action - moduloChecker] action in Container widget.
+  bool? hehe;
 
   @override
   void initState(BuildContext context) {}

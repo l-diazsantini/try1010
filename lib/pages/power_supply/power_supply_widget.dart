@@ -148,7 +148,14 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         ),
                         '5V',
                       );
-                      _model.colorChange = true;
+                      _model.tap = _model.tap + 1;
+                      safeSetState(() {});
+                      _model.hehe = await actions.moduloChecker(
+                        _model.tap,
+                      );
+                      _model.colorChange = _model.hehe!;
+                      safeSetState(() {});
+
                       safeSetState(() {});
                     },
                     child: Material(
@@ -235,7 +242,14 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         ),
                         'Neg5V',
                       );
-                      _model.colorChang = true;
+                      _model.tapp = _model.tapp + 1;
+                      safeSetState(() {});
+                      _model.hehe = await actions.moduloChecker(
+                        _model.tapp,
+                      );
+                      _model.colorChang = _model.hehe!;
+                      safeSetState(() {});
+
                       safeSetState(() {});
                     },
                     child: Material(

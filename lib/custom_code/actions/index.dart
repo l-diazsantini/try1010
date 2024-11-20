@@ -11,3 +11,4 @@ export 'get_x_values.dart' show getXValues;
 export 'get_y_values.dart' show getYValues;
 export 'get_max_value_and_position.dart' show getMaxValueAndPosition;
 export 'lock_portrait_orientation.dart' show lockPortraitOrientation;
+export 'modulo_checker.dart' show moduloChecker;
