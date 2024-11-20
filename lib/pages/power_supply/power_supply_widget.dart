@@ -148,6 +148,8 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         ),
                         '5V',
                       );
+                      _model.colorChange = true;
+                      safeSetState(() {});
                     },
                     child: Material(
                       color: Colors.transparent,
@@ -159,7 +161,12 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         width: double.infinity,
                         height: 100.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent2,
+                          color: valueOrDefault<Color>(
+                            _model.colorChange == true
+                                ? FlutterFlowTheme.of(context).success
+                                : FlutterFlowTheme.of(context).accent2,
+                            FlutterFlowTheme.of(context).accent2,
+                          ),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
@@ -228,6 +235,8 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         ),
                         'Neg5V',
                       );
+                      _model.colorChang = true;
+                      safeSetState(() {});
                     },
                     child: Material(
                       color: Colors.transparent,
@@ -239,7 +248,12 @@ class _PowerSupplyWidgetState extends State<PowerSupplyWidget> {
                         width: double.infinity,
                         height: 100.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).accent2,
+                          color: valueOrDefault<Color>(
+                            _model.colorChang == true
+                                ? FlutterFlowTheme.of(context).success
+                                : FlutterFlowTheme.of(context).accent2,
+                            FlutterFlowTheme.of(context).accent2,
+                          ),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(

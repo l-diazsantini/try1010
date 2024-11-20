@@ -19,8 +19,6 @@ class TriModel extends FlutterFlowModel<TriWidget> {
 
   String? receivedValue;
 
-  bool colorChange = true;
-
   ///  State fields for stateful widgets in this page.
 
   InstantTimer? rssiUpdateTimer;

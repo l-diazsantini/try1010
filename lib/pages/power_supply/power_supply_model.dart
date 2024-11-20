@@ -19,6 +19,10 @@ class PowerSupplyModel extends FlutterFlowModel<PowerSupplyWidget> {
 
   String? receivedValue;
 
+  bool colorChange = false;
+
+  bool colorChang = false;
+
   ///  State fields for stateful widgets in this page.
 
   InstantTimer? rssiUpdateTimer;
