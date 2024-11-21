@@ -292,7 +292,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
-                              width: 5000.0,
+                              width: 10000.0,
                               height: 397.0,
                               child: FlutterFlowLineChart(
                                 data: [
