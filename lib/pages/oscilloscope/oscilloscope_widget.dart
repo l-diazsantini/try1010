@@ -83,6 +83,14 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
             ),
             onPressed: () async {
               context.pop();
+              await actions.sendData(
+                BTDeviceStruct(
+                  name: widget!.deviceName,
+                  id: widget!.deviceId,
+                  rssi: widget!.deviceRssi,
+                ),
+                'TimerOff',
+              );
             },
           ),
           title: Text(
@@ -281,7 +289,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: 3000.0,
-                              height: double.infinity,
+                              height: 397.0,
                               child: FlutterFlowLineChart(
                                 data: [
                                   FFLineChartData(
@@ -310,9 +318,14 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                   maxY: 5.0,
                                 ),
                                 xAxisLabelInfo: AxisLabelInfo(
+                                  showLabels: true,
+                                  labelTextStyle: TextStyle(),
+                                  labelInterval: 10.0,
                                   reservedSize: 32.0,
                                 ),
                                 yAxisLabelInfo: AxisLabelInfo(
+                                  showLabels: true,
+                                  labelInterval: 5.0,
                                   reservedSize: 40.0,
                                 ),
                               ),
