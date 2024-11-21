@@ -302,7 +302,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                               },
                               child: Container(
                                 width: valueOrDefault<double>(
-                                  _model.zoom == true ? 50000.0 : 7000.0,
+                                  _model.zoom == true ? 70000.0 : 7000.0,
                                   7000.0,
                                 ),
                                 height: 397.0,
