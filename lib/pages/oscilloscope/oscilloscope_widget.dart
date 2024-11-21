@@ -154,7 +154,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                     'Oscilloscope',
                                   );
                                   _model.instantTimer = InstantTimer.periodic(
-                                    duration: Duration(milliseconds: 500),
+                                    duration: Duration(milliseconds: 250),
                                     callback: (timer) async {
                                       _model.dataaa = await actions.receiveData(
                                         widget!.devicee!,
