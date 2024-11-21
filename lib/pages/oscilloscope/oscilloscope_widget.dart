@@ -146,7 +146,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                     'Oscilloscope',
                                   );
                                   _model.instantTimer = InstantTimer.periodic(
-                                    duration: Duration(milliseconds: 1000),
+                                    duration: Duration(milliseconds: 500),
                                     callback: (timer) async {
                                       _model.dataaa = await actions.receiveData(
                                         widget!.devicee!,
@@ -280,7 +280,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
-                              width: 2000.0,
+                              width: 3000.0,
                               height: double.infinity,
                               child: FlutterFlowLineChart(
                                 data: [
@@ -306,7 +306,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                 axisBounds: AxisBounds(
                                   minX: -0.0,
                                   minY: -5.0,
-                                  maxX: 200.0,
+                                  maxX: 300.0,
                                   maxY: 5.0,
                                 ),
                                 xAxisLabelInfo: AxisLabelInfo(

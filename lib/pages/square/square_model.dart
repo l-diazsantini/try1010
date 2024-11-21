@@ -19,6 +19,10 @@ class SquareModel extends FlutterFlowModel<SquareWidget> {
 
   String? receivedValue;
 
+  bool colorBtn = false;
+
+  bool colorsBtn = false;
+
   ///  State fields for stateful widgets in this page.
 
   InstantTimer? rssiUpdateTimer;
