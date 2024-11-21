@@ -115,7 +115,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                 child: Text(
-                  'Press \"Start\" to begin. Press \"Stop\" to view measurements below.',
+                  'Press \"Start\" to begin. Press \"Stop\" to view measurements below. Double tap chart to zoom.',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Montserrat',
@@ -154,7 +154,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                     'Oscilloscope',
                                   );
                                   _model.instantTimer = InstantTimer.periodic(
-                                    duration: Duration(milliseconds: 500),
+                                    duration: Duration(milliseconds: 250),
                                     callback: (timer) async {
                                       _model.dataaa = await actions.receiveData(
                                         widget!.devicee!,
