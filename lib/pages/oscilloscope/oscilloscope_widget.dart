@@ -230,7 +230,11 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                                     'OscData',
                                   );
                                   _model.dat = await actions.receiveData(
-                                    widget!.devicee!,
+                                    BTDeviceStruct(
+                                      name: widget!.deviceName,
+                                      id: widget!.deviceId,
+                                      rssi: widget!.deviceRssi,
+                                    ),
                                   );
                                   _model.dataa = _model.dat;
                                   safeSetState(() {});
@@ -288,7 +292,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
-                              width: 3000.0,
+                              width: 5000.0,
                               height: 397.0,
                               child: FlutterFlowLineChart(
                                 data: [
