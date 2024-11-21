@@ -291,46 +291,60 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget> {
                         children: [
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Container(
-                              width: 7000.0,
-                              height: 397.0,
-                              child: FlutterFlowLineChart(
-                                data: [
-                                  FFLineChartData(
-                                    xData: FFAppState().xaxis,
-                                    yData: FFAppState().yaxis,
-                                    settings: LineChartBarData(
-                                      color:
-                                          FlutterFlowTheme.of(context).success,
-                                      barWidth: 2.0,
-                                      isCurved: true,
-                                    ),
-                                  )
-                                ],
-                                chartStylingInfo: ChartStylingInfo(
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  showGrid: true,
-                                  borderColor: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  borderWidth: 3.0,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onDoubleTap: () async {
+                                _model.zoom = !_model.zoom;
+                                safeSetState(() {});
+                              },
+                              child: Container(
+                                width: valueOrDefault<double>(
+                                  _model.zoom == true ? 50000.0 : 7000.0,
+                                  7000.0,
                                 ),
-                                axisBounds: AxisBounds(
-                                  minX: -0.0,
-                                  minY: -5.0,
-                                  maxX: 100.0,
-                                  maxY: 5.0,
-                                ),
-                                xAxisLabelInfo: AxisLabelInfo(
-                                  showLabels: true,
-                                  labelTextStyle: TextStyle(),
-                                  labelInterval: 10.0,
-                                  reservedSize: 32.0,
-                                ),
-                                yAxisLabelInfo: AxisLabelInfo(
-                                  showLabels: true,
-                                  labelInterval: 5.0,
-                                  reservedSize: 40.0,
+                                height: 397.0,
+                                child: FlutterFlowLineChart(
+                                  data: [
+                                    FFLineChartData(
+                                      xData: FFAppState().xaxis,
+                                      yData: FFAppState().yaxis,
+                                      settings: LineChartBarData(
+                                        color: FlutterFlowTheme.of(context)
+                                            .success,
+                                        barWidth: 2.0,
+                                        isCurved: true,
+                                      ),
+                                    )
+                                  ],
+                                  chartStylingInfo: ChartStylingInfo(
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                    showGrid: true,
+                                    borderColor: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    borderWidth: 3.0,
+                                  ),
+                                  axisBounds: AxisBounds(
+                                    minX: -0.0,
+                                    minY: -5.0,
+                                    maxX: 100.0,
+                                    maxY: 5.0,
+                                  ),
+                                  xAxisLabelInfo: AxisLabelInfo(
+                                    showLabels: true,
+                                    labelTextStyle: TextStyle(),
+                                    labelInterval: 10.0,
+                                    reservedSize: 32.0,
+                                  ),
+                                  yAxisLabelInfo: AxisLabelInfo(
+                                    showLabels: true,
+                                    labelInterval: 5.0,
+                                    reservedSize: 40.0,
+                                  ),
                                 ),
                               ),
                             ),

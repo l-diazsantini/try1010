@@ -31,6 +31,8 @@ class OscilloscopeModel extends FlutterFlowModel<OscilloscopeWidget> {
 
   double? time;
 
+  bool zoom = false;
+
   ///  State fields for stateful widgets in this page.
 
   InstantTimer? instantTimer;
